@@ -1,15 +1,27 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 import CarouselItem from './CarouselItem'
 
 const Carousel = () => {
+    const [currenSlide, setCurrentSlide] = useState(0)
+    
     const slides = [
-        "/Banner_NuevasBebidas_desktop_v2_3024x.webp",
-        "/packs_c202e423-6577-4d53-9ebe-69735c0a878f_3024x.webp"
+        "/banner1.jpg",
+        "/banner2.jpg"
     ]
-    console.log(slides)
+
+    useEffect(() =>{
+        const slideInterval = setInterval(()=>{
+            setCurrentSlide(currenSlide => currenSlide < slides.length - 1 ? currenSlide + 1 : 0)
+        }, 3000)
+
+        return() => clearInterval(slideInterval)
+    }, [])
+    
+    
   return (
     <div className='carousel'>
-        <div className="carousel__inner">
+        <div className="carousel__inner" style={{ transform: `translateX(${-currenSlide * 100}%)`}}>
             {slides.map((slide, index) =>  <CarouselItem slide={slide} key={index}/>)}
         </div>
     </div>
