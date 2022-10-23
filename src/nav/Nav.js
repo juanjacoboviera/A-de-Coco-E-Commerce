@@ -3,7 +3,6 @@ import Logo from '../logo/Logo'
 import SearchBar from '../searchbar/SearchBar'
 import Cart from '../cart/Cart';
 
-
 const Nav = () => {
     const webSections = [
         {category: 'Bebidas'},
@@ -23,8 +22,7 @@ const Nav = () => {
     <ul className='nav__sectionTwo'>
         {webSections.map((section, index) => <li key={index}><a href="#">{section.category.toUpperCase()}</a></li>)}
     </ul>
-    </>
-    
+    </> 
   )
 }
 
