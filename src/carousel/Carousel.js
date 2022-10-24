@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import CarouselItem from './CarouselItem'
+import CarouselControls from './CarouselControls'
 
 const Carousel = () => {
     const [currenSlide, setCurrentSlide] = useState(0)
@@ -9,6 +10,16 @@ const Carousel = () => {
         "/banner1.jpg",
         "/banner2.jpg"
     ]
+
+    const prev = () => {
+        const index = currenSlide > 0 ? currenSlide - 1 : slides.length - 1
+        setCurrentSlide(index)
+    }
+
+    const next = () => {
+        const index = currenSlide < slides.length - 1 ? currenSlide + 1 : 0 
+        setCurrentSlide(index)
+    }
 
     useEffect(() =>{
         const slideInterval = setInterval(()=>{
@@ -24,6 +35,7 @@ const Carousel = () => {
         <div className="carousel__inner" style={{ transform: `translateX(${-currenSlide * 100}%)`}}>
             {slides.map((slide, index) =>  <CarouselItem slide={slide} key={index}/>)}
         </div>
+        <CarouselControls prev={prev} next={next}/>
     </div>
   )
 }
