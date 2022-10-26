@@ -1,5 +1,5 @@
-import Header from "./header/Header";
-import Main from "./main/Main";
+import Header from "./pages/home/Header";
+import Main from "./pages/home/Main";
 
 function App() {
   return (

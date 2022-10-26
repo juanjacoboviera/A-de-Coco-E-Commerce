@@ -18,7 +18,7 @@ const Carousel = () => {
         slideInterval.current = setInterval(()=>{
             setCurrentSlide(currenSlide => currenSlide < slides.length - 1 ? currenSlide + 1 : 0)
         }, 3000)
-    }
+    } 
 
     const stopSlideTimer = () =>{
         if(slideInterval.current){

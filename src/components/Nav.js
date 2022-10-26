@@ -1,6 +1,6 @@
 import React from 'react'
-import Logo from '../logo/Logo'
-import SearchBar from '../searchbar/SearchBar'
+import Logo from './Logo'
+import SearchBar from './SearchBar';
 import Cart from '../cart/Cart';
 
 const Nav = () => {
