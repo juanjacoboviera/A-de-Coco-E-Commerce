@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from './Logo'
 import SearchBar from './SearchBar';
-import Cart from '../cart/Cart';
+import Cart from './Cart'
 
 const Nav = () => {
     const webSections = [

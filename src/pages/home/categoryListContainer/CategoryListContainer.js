@@ -1,6 +1,6 @@
 import React from 'react'
 import CategoryItem from './CategoryItem'
-import c3 from "../../../images/C3.webp"
+import c3 from "../../../assets/C3.webp"
 
 const CategoryListContainer = () => {
     const categoryObject = [
