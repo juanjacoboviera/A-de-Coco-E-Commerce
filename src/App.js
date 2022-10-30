@@ -1,7 +1,7 @@
 import Header from "./pages/home/Header";
 import Main from "./pages/home/Main";
 import Home from "./pages/home/Home";
-import Aceites from "./pages/aceites/Aceites";
+import Aceites from "./pages/Aceites/Aceites";
 
 function App() {
   return (

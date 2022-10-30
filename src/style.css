@@ -235,9 +235,25 @@ position: relative;
 }
 
 .main__container{
+  background-color: rgb(244, 244, 244);
+}
+
+.shop__container{
   display: grid;
   grid-template-columns: 1fr 2fr;
-  background-color: rgb(244, 244, 244);
+}
+
+.sectionDescription__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.title__div{
+  text-align: center;
+  color: #31d3a3;;
 }
 
 .card__container{
