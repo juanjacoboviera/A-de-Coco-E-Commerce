@@ -2,13 +2,13 @@ import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart }  from "@fortawesome/free-solid-svg-icons";
 
-const ProductCard = () => {
+const ProductCard = ({setOpenModal}) => {
   return (
     <div className='product__card'>
         <div className="product__wishlist">
             <button className='fav__btn'><FontAwesomeIcon icon={faHeart}/></button>
         </div>
-        <button className='quickView__btn'>VER DETALLE</button>
+        <button className='quickView__btn' onClick={() => setOpenModal(true)}>VER DETALLE</button>
         <div className="product__img__mask">
             <div className="img__container"></div>
             <div className="img__container2"></div>

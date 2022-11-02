@@ -1,16 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ProductBanner from '../../components/ProductBanner'
 import Nav from '../../components/Nav'
 import cocoImg from '../../assets/banner_aceites.webp'
 import ProductCard from '../../components/ProductCard'
 import CategoryTitle from '../../components/CategoryTitle'
 import CategoryDescription from '../../components/CategoryDescription'
+import ProductModal from '../../components/ProductModal'
+
 
 const Aceites = () => {
+  const [openModal, setOpenModal] = useState(false)
   
   return (
     <>
       <header>
+        <ProductModal open={openModal} setOpenModal={setOpenModal} />
         <Nav/>
         <ProductBanner bannerImg={cocoImg}> 
         <h2>ACEITES <br/> A DE COCO</h2>
@@ -29,8 +33,8 @@ const Aceites = () => {
           <div className="filters__container">
           </div>
           <div className="card__container">
-            <ProductCard/>
-            <ProductCard/>
+            <ProductCard setOpenModal={setOpenModal}/>
+            <ProductCard setOpenModal={setOpenModal}/>
           </div>
 
           </div>
