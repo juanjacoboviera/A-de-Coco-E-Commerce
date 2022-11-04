@@ -6,7 +6,6 @@ import ProductBanner from '../../components/ProductBanner'
 const Header = () => {
   return (
     <header>
-    <Nav/>
     <Carousel/>
     </header>
   )

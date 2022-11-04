@@ -1,14 +1,19 @@
 import Header from "./pages/home/Header";
 import Main from "./pages/home/Main";
+import Nav from './components/Nav'
 import Home from "./pages/home/Home";
-import Aceites from "./pages/Aceites/Aceites";
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import CategoryListContainer from "./pages/Aceites/CategoryListContainer";
 
 function App() {
   return (
-    <div className="container">
-      {/* <Home/> */}
-      <Aceites/>
-    </div>
+    <BrowserRouter>
+      <Nav/>
+      <Routes>
+        <Route path="/" element={<Home/> }/>
+        <Route  path="/Category/:categoryId" element={<CategoryListContainer/> }/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

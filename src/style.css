@@ -345,7 +345,7 @@ position: relative;
   position: relative;
   height: 350px;
   overflow: hidden;
-  background: url(https://cdn.shopify.com/s/files/1/0403/4550/1847/products/adecoco_aceitedecocovirgen_300ml_2_720x.png?v=1616611958);
+  /* background: url(https://cdn.shopify.com/s/files/1/0403/4550/1847/products/adecoco_aceitedecocovirgen_300ml_2_720x.png?v=1616611958); */
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
@@ -364,7 +364,7 @@ position: relative;
   height: 350px;
   overflow: hidden;
   transition: opacity .3s ease;
-  background-image: url(https://cdn.shopify.com/s/files/1/0403/4550/1847/products/adecoco_aceitedecocovirgen_300ml_1_720x.png?v=1616611955);
+  /* background-image: url(https://cdn.shopify.com/s/files/1/0403/4550/1847/products/adecoco_aceitedecocovirgen_300ml_1_720x.png?v=1616611955); */
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;

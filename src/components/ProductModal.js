@@ -1,6 +1,6 @@
 import React from 'react'
-import img1 from '../assets/1.1.webp'
-import img2 from '../assets/1.2.webp'
+// import img1 from '../assets/1.1.webp'
+// import img2 from '../assets/1.2.webp'
 
 const ProductModal = ({open, setOpenModal}) => {
     if(!open) return null;
@@ -12,10 +12,10 @@ const ProductModal = ({open, setOpenModal}) => {
         }} className="modal__container">
             <div className="modal__left">
                 <div className="thumbnails__container">
-                    <img className='thumbnail' src={img1} alt="" width='100px' height='110px' />
-                    <img className='thumbnail' src={img2} alt="" width='100px' height='110px' />
+                    <img className='thumbnail' src='/1.1.webp' alt="" width='100px' height='110px' />
+                    <img className='thumbnail' src='/1.2.webp' alt="" width='100px' height='110px' />
                     </div>
-                    <img src={img1} width='340px' height='350px' alt="" />
+                    <img src='/1.1.webp' width='340px' height='350px' alt="" />
             </div>
             <div className="modal__right">
                 <div className="content__container">
