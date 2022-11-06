@@ -14,3 +14,10 @@ export const getCategories = (categoryId) =>{
     })
     return filteredItems
 }
+
+export const getSingleProduct = (producto) =>{
+    let filteredItems = products.find(product => {
+       return product.id == producto;
+    })
+    return filteredItems
+}

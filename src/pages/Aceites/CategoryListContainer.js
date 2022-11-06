@@ -6,16 +6,14 @@ import CategoryTitle from '../../components/CategoryTitle'
 import CategoryDescription from '../../components/CategoryDescription'
 import ProductModal from '../../components/ProductModal'
 import {useParams} from 'react-router-dom'
-import { getItemsByCategory } from '../../functions/functions'
-import { getCategories } from '../../functions/functions'
-
+import {getCategories, getItemsByCategory, getSingleProduct} from '../../functions/functions'
 
 const CategoryListContainer = () =>{
 
   const [products, setProducts] = useState([]);
   const [categoryInfo, setCategoryInfo] = useState({});
-  const [openModal, setOpenModal] = useState(false);
-  const {categoryId} = useParams();
+  const [singleProduct, setSingleProduct] = useState({})
+  const {categoryId, producto} = useParams();
  
   useEffect(() =>{
     const category = getCategories(categoryId)
@@ -26,13 +24,16 @@ const CategoryListContainer = () =>{
     const listOfProducts = [...productsByCategory]
     setProducts(listOfProducts)
 
-  }, [categoryId])
+    const getProduct = getSingleProduct(producto)
+    const storedProduct = {...getProduct}
+    setSingleProduct(storedProduct)
 
-  
+  }, [categoryId, producto])
+
   return (
     <>
       <header>
-        <ProductModal open={openModal} setOpenModal={setOpenModal} />
+        <ProductModal open={!!producto} close={`/Category/${categoryId}`} singleProduct={singleProduct}  />
         <ProductBanner bannerImg={categoryInfo.bannerImg}> 
         <h2>{categoryInfo.bannerTitle}</h2>
         </ProductBanner>
@@ -50,7 +51,7 @@ const CategoryListContainer = () =>{
           <div className="filters__container">
           </div>
           <div className="card__container">
-            {products.map(product => <ProductCard key={product.id} product={product} setOpenModal={setOpenModal}/>)}
+            {products.map(product => <ProductCard key={product.id} product={product}/>)}
           </div>
 
           </div>

@@ -1,15 +1,16 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart }  from "@fortawesome/free-solid-svg-icons";
+import {useParams, Link} from 'react-router-dom'
 
-const ProductCard = ({setOpenModal, product}) => {
-  console.log(product.images)
+const ProductCard = ({product}) => {
+  const {categoryId} = useParams()
   return (
     <div className='product__card'>
         <div className="product__wishlist">
             <button className='fav__btn'><FontAwesomeIcon icon={faHeart}/></button>
         </div>
-        <button className='quickView__btn' onClick={() => setOpenModal(true)}>VER DETALLE</button>
+        <Link className='quickView__btn' to={`/Category/${categoryId}/${product.id}`} >VER DETALLE</Link>
         <div className="product__img__mask">
             <div className="img__container" style={{backgroundImage: `url(${product.images[1]})`}}></div>
             <div className="img__container2" style={{backgroundImage: `url(${product.images[0]})`}} ></div>

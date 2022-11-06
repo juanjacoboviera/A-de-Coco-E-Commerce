@@ -14,7 +14,7 @@ const CategoryListContainer = () => {
 
   return (
     <div className='categoryList__container'>
-        {categoryObject.map((category, index) => <Link to={category.route}><CategoryItem key={index}  name={category.name} category={category.img}/></Link>)} 
+        {categoryObject.map((category, index) => <Link to={category.route} key={category.name}><CategoryItem name={category.name} category={category.img}/></Link>)} 
     </div>
   )
 }
