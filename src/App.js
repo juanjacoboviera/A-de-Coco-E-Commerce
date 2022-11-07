@@ -1,10 +1,8 @@
-import Header from "./pages/home/Header";
-import Main from "./pages/home/Main";
 import Nav from './components/Nav'
 import Home from "./pages/home/Home";
-import {BrowserRouter, Routes, Route, useParams} from 'react-router-dom'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import CategoryListContainer from "./pages/Aceites/CategoryListContainer";
-import ProductModal from "./components/ProductModal";
+
 
 function App() {
   return (
