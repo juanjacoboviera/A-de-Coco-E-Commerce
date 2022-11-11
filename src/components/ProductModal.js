@@ -1,10 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import ReactDOM  from 'react-dom';
+import ProductCounter from './ProductCounter';
 
 const ProductModal = ({open, close, singleProduct}) => {
     const {category, description, images, price, title, stock} = singleProduct
-console.log(images)
     if(!open) return null;
   return ReactDOM.createPortal (
     <Link to={close} className='modal__overlay'>
@@ -25,6 +25,7 @@ console.log(images)
                 <h2>{title}</h2>
                 <span>${price}</span>
                 <p>{description}</p>
+                <ProductCounter/>
                 <button className='buy__btn'>AGREGAR AL CARRITO </button>
                 </div>
             </div>

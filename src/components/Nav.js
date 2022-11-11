@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Logo from './Logo'
 import SearchBar from './SearchBar';
-import Cart from './Cart'
 import {Link} from 'react-router-dom'
+import CartWidget from './CartWidget';
+
 
 const Nav = () => {
+  const [openCart, setOpenCart] = useState(false)
+
     const webSections = [
       {category: 'Home', route: '/'},
       {category: 'Aguas', route: '/category/Aguas'},
@@ -20,7 +23,7 @@ const Nav = () => {
     <div className='nav__sectionOne'>
         <SearchBar/>
         <Logo/>
-        <Cart/>
+        <CartWidget setOpenCart={setOpenCart} openCart={openCart}/>
     </div>
     <ul className='nav__sectionTwo'>
           {webSections.map((section, index) => <li key={index}><Link to={section.route}>{section.category.toUpperCase()}</Link></li>)}

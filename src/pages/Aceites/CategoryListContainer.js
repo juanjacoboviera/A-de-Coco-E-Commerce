@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import ProductBanner from '../../components/ProductBanner'
-import Nav from '../../components/Nav'
 import ProductCard from '../../components/ProductCard'
 import CategoryTitle from '../../components/CategoryTitle'
 import CategoryDescription from '../../components/CategoryDescription'
