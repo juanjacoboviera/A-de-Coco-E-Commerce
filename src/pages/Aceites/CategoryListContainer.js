@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import ProductBanner from '../../components/ProductBanner'
 import ProductCard from '../../components/ProductCard'
 import CategoryTitle from '../../components/CategoryTitle'
@@ -7,13 +7,25 @@ import ProductModal from '../../components/ProductModal'
 import {useParams} from 'react-router-dom'
 import {getCategories, getItemsByCategory, getSingleProduct} from '../../functions/functions'
 
+
 const CategoryListContainer = () =>{
 
   const [products, setProducts] = useState([]);
   const [categoryInfo, setCategoryInfo] = useState({});
   const [singleProduct, setSingleProduct] = useState({})
   const {categoryId, producto} = useParams();
- 
+  const [counter, setCounter] = useState(1)
+
+
+  const addToCount = () =>{
+    setCounter((prevValue) => prevValue + 1)
+  }
+
+  const decreaseToCount = () =>{
+    setCounter((prevValue) => prevValue - 1)
+  }
+
+
   useEffect(() =>{
     const category = getCategories(categoryId)
     const selectedCategory = {...category}
@@ -27,12 +39,16 @@ const CategoryListContainer = () =>{
     const storedProduct = {...getProduct}
     setSingleProduct(storedProduct)
 
-  }, [categoryId, producto])
-
+   if(producto === undefined){
+    setCounter((prevValue) => prevValue - prevValue + 1)
+    }
+    console.log(counter)
+  }, [categoryId, producto, counter])
+  
   return (
     <>
       <header>
-        <ProductModal open={!!producto} close={`/Category/${categoryId}`} singleProduct={singleProduct}  />
+        <ProductModal open={!!producto} close={`/Category/${categoryId}`} singleProduct={singleProduct} addToCount={addToCount} decreaseToCount={decreaseToCount} counter={counter} setCounter={setCounter} />
         <ProductBanner bannerImg={categoryInfo.bannerImg}> 
         <h2>{categoryInfo.bannerTitle}</h2>
         </ProductBanner>

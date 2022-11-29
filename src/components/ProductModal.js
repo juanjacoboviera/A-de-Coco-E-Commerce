@@ -1,10 +1,22 @@
-import React from 'react'
+import React, {useState, useContext} from 'react'
 import {Link} from 'react-router-dom'
 import ReactDOM  from 'react-dom';
 import ProductCounter from './ProductCounter';
+import cartContext from '../storage/CartContext';
 
-const ProductModal = ({open, close, singleProduct}) => {
+const ProductModal = ({open, close, singleProduct, addToCount, decreaseToCount, setCounter, counter}) => {
     const {category, description, images, price, title, stock} = singleProduct
+
+    const context = useContext(cartContext)
+    const {addToCart, cart} = context.value
+    
+    const itemForCart = {
+        ...singleProduct,
+        quantity: counter
+    }
+
+    
+
     if(!open) return null;
   return ReactDOM.createPortal (
     <Link to={close} className='modal__overlay'>
@@ -21,12 +33,12 @@ const ProductModal = ({open, close, singleProduct}) => {
             </div>
             <div className="modal__right">
                 <div className="content__container">
-                <Link to={close} className='closeModal__btn'>X</Link>
+                <Link to={close}  className='closeModal__btn'>X</Link>
                 <h2>{title}</h2>
                 <span>${price}</span>
                 <p>{description}</p>
-                <ProductCounter/>
-                <button className='buy__btn'>AGREGAR AL CARRITO </button>
+                <ProductCounter addToCount={addToCount} decreaseToCount={decreaseToCount} counter={counter}/>
+                <button  onClick={() => addToCart(itemForCart)} className='buy__btn'>AGREGAR AL CARRITO </button>
                 </div>
             </div>
         </div>

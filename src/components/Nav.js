@@ -1,12 +1,19 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import Logo from './Logo'
 import SearchBar from './SearchBar';
 import {Link} from 'react-router-dom'
 import CartWidget from './CartWidget';
+import cartContext from '../storage/CartContext';
 
 
 const Nav = () => {
   const [openCart, setOpenCart] = useState(false)
+  const context = useContext(cartContext)
+  const {cart, deleteFromCart, cartTotal, totalInCart} = context.value
+
+  useEffect(() =>{
+    totalInCart()
+  }, [cart])
 
     const webSections = [
       {category: 'Home', route: '/'},
@@ -23,7 +30,7 @@ const Nav = () => {
     <div className='nav__sectionOne'>
         <SearchBar/>
         <Logo/>
-        <CartWidget setOpenCart={setOpenCart} openCart={openCart}/>
+        <CartWidget setOpenCart={setOpenCart} openCart={openCart} cart={cart} deleteFromCart={deleteFromCart} cartTotal={cartTotal}/>
     </div>
     <ul className='nav__sectionTwo'>
           {webSections.map((section, index) => <li key={index}><Link to={section.route}>{section.category.toUpperCase()}</Link></li>)}
