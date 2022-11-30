@@ -1,6 +1,13 @@
 import { categoryContent } from "../data/categoryContent";
 import { products } from "../data/products";
 
+// let products = getProducts()
+//  getProducts().then((res) => {
+//     products = res
+//  })
+// const products = await info.then(result => result.data);
+// console.log(products)
+
 export const getItemsByCategory = (categoryId) =>{
     if(categoryId === 'Todos'){
         return products

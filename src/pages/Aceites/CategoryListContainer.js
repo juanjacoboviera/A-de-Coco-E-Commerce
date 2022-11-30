@@ -5,8 +5,8 @@ import CategoryTitle from '../../components/CategoryTitle'
 import CategoryDescription from '../../components/CategoryDescription'
 import ProductModal from '../../components/ProductModal'
 import {useParams} from 'react-router-dom'
-import {getCategories, getItemsByCategory, getSingleProduct} from '../../functions/functions'
-
+import {getCategories} from '../../functions/functions'
+import { getProductsByCategory, getSingleProduct, getAllProducts} from '../../services/firebase'
 
 const CategoryListContainer = () =>{
 
@@ -31,13 +31,26 @@ const CategoryListContainer = () =>{
     const selectedCategory = {...category}
     setCategoryInfo(selectedCategory)
   
-    const productsByCategory = getItemsByCategory(categoryId)
-    const listOfProducts = [...productsByCategory]
-    setProducts(listOfProducts)
+    if(categoryId === 'Todos'){
+      getAllProducts().then((itemsDB) =>{
+        setProducts(itemsDB)
+      })
+    }else(
+      getProductsByCategory(categoryId).then((itemsDB) =>{
+        setProducts(itemsDB)
+      })
+    )
+    // const productsByCategory = getItemsByCategory(categoryId)
+    // const listOfProducts = [...productsByCategory]
+    // setProducts(listOfProducts)
 
-    const getProduct = getSingleProduct(producto)
-    const storedProduct = {...getProduct}
-    setSingleProduct(storedProduct)
+    // const getProduct = getSingleProduct(producto)
+    // const storedProduct = {...getProduct}
+    // setSingleProduct(storedProduct)
+
+    getSingleProduct(producto).then((itemsDB) =>{
+      setSingleProduct(itemsDB)
+    })
 
    if(producto === undefined){
     setCounter((prevValue) => prevValue - prevValue + 1)

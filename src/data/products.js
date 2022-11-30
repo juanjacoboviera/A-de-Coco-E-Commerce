@@ -82,7 +82,7 @@ export const products = [
         title: "COCO ORGÁNICO RALLADO SIN AZÚCAR",
         size: "150 GR",
         price: 10150,
-        stock: 0,
+        stock: 1,
         category: "Organicos",
         images: ["/8.1.webp", "/8.2.webp"],
         description: "Nuestro Coco ORGÁNICO se obtiene del rallado y secado lento de cocos orgánicos maduros seleccionados. Es 100% natural, rico en fibra, SIN AZÚCAR, sin conservantes ni saborizantes añadidos"
@@ -126,7 +126,7 @@ export const products = [
         title: "COCO CHIPS COCOA",
         size: "35 GR",
         price: 7300,
-        stock: 0,
+        stock: 2,
         category: "Snacks",
         images: ["/12.1.webp", "/12.2.webp"],
         description: "¡El delicioso sabor de nuestros COCO CHIPS ahora con COCOA! crujientes hojuelas de coco horneadas lentamente para que las disfrutes en cualquier momento como snack o topping para bowls, smoothies, frutas y yogur."

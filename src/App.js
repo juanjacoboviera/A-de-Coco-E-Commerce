@@ -10,6 +10,7 @@ import CartWidget from './components/CartWidget';
 function App() {
 
   
+  
   return (
     <CartContextProvider>
       <BrowserRouter>
