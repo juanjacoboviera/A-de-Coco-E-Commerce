@@ -51,29 +51,6 @@ const ProductModal = ({open, close, singleProduct, addToCount, decreaseToCount, 
                 </div>
             </div>
             </> }
-            
-            
-            {/* <div className="modal__left">
-                <div className="thumbnails__container">
-                <img className='thumbnail' src={images? images[0] : undefined } alt="" width='100px' height='110px' />
-                    <img className='thumbnail' src={images? images[1] : undefined }  alt="" width='100px' height='110px' />
-                    </div>
-                    <img src={images? images[0] : undefined }   width='340px' height='350px' alt="" />
-            </div>
-            <div className="modal__right">
-                <div className="content__container">
-                <Link to={close}  className='closeModal__btn'>X</Link>
-                <h2>{title}</h2>
-                <span>${price}</span>
-                <p>{description}</p>
-                <ProductCounter addToCount={addToCount} decreaseToCount={decreaseToCount} counter={counter}/>
-                <Link to={close}><button  onClick={() => {
-                    addToCart(itemForCart)
-                    setOpenCart(!openCart)
-                }} 
-                className='buy__btn'>AGREGAR AL CARRITO </button></Link>
-                </div>
-            </div> */}
         </div>
     </Link>,
     document.getElementById('modal')
