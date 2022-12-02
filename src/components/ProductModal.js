@@ -4,7 +4,7 @@ import ReactDOM  from 'react-dom';
 import ProductCounter from './ProductCounter';
 import cartContext from '../storage/CartContext';
 
-const ProductModal = ({open, close, singleProduct, addToCount, decreaseToCount, setCounter, counter}) => {
+const ProductModal = ({open, close, singleProduct, addToCount, decreaseToCount, setCounter, counter, setOpenCart, openCart}) => {
     const {category, description, images, price, title, stock} = singleProduct
 
     const context = useContext(cartContext)
@@ -14,8 +14,6 @@ const ProductModal = ({open, close, singleProduct, addToCount, decreaseToCount, 
         ...singleProduct,
         quantity: counter
     }
-
-    
 
     if(!open) return null;
   return ReactDOM.createPortal (
@@ -38,7 +36,11 @@ const ProductModal = ({open, close, singleProduct, addToCount, decreaseToCount, 
                 <span>${price}</span>
                 <p>{description}</p>
                 <ProductCounter addToCount={addToCount} decreaseToCount={decreaseToCount} counter={counter}/>
-                <button  onClick={() => addToCart(itemForCart)} className='buy__btn'>AGREGAR AL CARRITO </button>
+                <Link to={close}><button  onClick={() => {
+                    addToCart(itemForCart)
+                    setOpenCart(!openCart)
+                }} 
+                className='buy__btn'>AGREGAR AL CARRITO </button></Link>
                 </div>
             </div>
         </div>

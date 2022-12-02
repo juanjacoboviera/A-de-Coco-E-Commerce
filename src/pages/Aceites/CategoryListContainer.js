@@ -7,6 +7,7 @@ import ProductModal from '../../components/ProductModal'
 import {useParams} from 'react-router-dom'
 import {getCategories} from '../../functions/functions'
 import { getProductsByCategory, getSingleProduct, getAllProducts} from '../../services/firebase'
+import cartContext from '../../storage/CartContext'
 
 const CategoryListContainer = () =>{
 
@@ -15,6 +16,8 @@ const CategoryListContainer = () =>{
   const [singleProduct, setSingleProduct] = useState({})
   const {categoryId, producto} = useParams();
   const [counter, setCounter] = useState(1)
+  const context = useContext(cartContext)
+  const {openCart, setOpenCart} = context.value
 
 
   const addToCount = () =>{
@@ -27,6 +30,7 @@ const CategoryListContainer = () =>{
 
 
   useEffect(() =>{
+    // Migrar esto a la BDs Firebase
     const category = getCategories(categoryId)
     const selectedCategory = {...category}
     setCategoryInfo(selectedCategory)
@@ -40,14 +44,6 @@ const CategoryListContainer = () =>{
         setProducts(itemsDB)
       })
     )
-    // const productsByCategory = getItemsByCategory(categoryId)
-    // const listOfProducts = [...productsByCategory]
-    // setProducts(listOfProducts)
-
-    // const getProduct = getSingleProduct(producto)
-    // const storedProduct = {...getProduct}
-    // setSingleProduct(storedProduct)
-
     getSingleProduct(producto).then((itemsDB) =>{
       setSingleProduct(itemsDB)
     })
@@ -61,7 +57,7 @@ const CategoryListContainer = () =>{
   return (
     <>
       <header>
-        <ProductModal open={!!producto} close={`/Category/${categoryId}`} singleProduct={singleProduct} addToCount={addToCount} decreaseToCount={decreaseToCount} counter={counter} setCounter={setCounter} />
+        <ProductModal open={!!producto} close={`/Category/${categoryId}`} singleProduct={singleProduct} addToCount={addToCount} decreaseToCount={decreaseToCount} counter={counter} setCounter={setCounter} setOpenCart={setOpenCart} openCart={openCart} />
         <ProductBanner bannerImg={categoryInfo.bannerImg}> 
         <h2>{categoryInfo.bannerTitle}</h2>
         </ProductBanner>
@@ -79,7 +75,7 @@ const CategoryListContainer = () =>{
           <div className="filters__container">
           </div>
           <div className="card__container">
-            {products.map(product => <ProductCard key={product.id} product={product}/>)}
+            {products.map(product => <ProductCard key={product.id} product={product} setOpenCart={setOpenCart} openCart={openCart}/>)}
           </div>
 
           </div>

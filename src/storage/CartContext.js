@@ -5,6 +5,7 @@ const cartContext = createContext();
  export const CartContextProvider = (props) =>{
     const [cart, setCart] = useState([]);
     const [cartTotal, setCartTotal] = useState(0);
+    const [openCart, setOpenCart] = useState(false)
  
     const addToCart = (itemData) =>{
         const newCart = [...cart]
@@ -29,12 +30,19 @@ const cartContext = createContext();
           );
           setCartTotal(total);
     }
+
+    const clearCart = () =>{
+        setCart([]);
+    }
     
     const value = {
+        openCart,
+        setOpenCart,
         cart,
         addToCart,
         deleteFromCart,
         totalInCart,
+        clearCart,
         cartTotal
     };
 

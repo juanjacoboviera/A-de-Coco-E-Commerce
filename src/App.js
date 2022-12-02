@@ -6,12 +6,11 @@ import CartContent from './components/CartContent';
 import cartContext, { CartContextProvider} from './storage/CartContext';
 import { useState } from 'react';
 import CartWidget from './components/CartWidget';
+import { exportItemsToFirestore } from './services/firebase';
 
 function App() {
-
-  
-  
   return (
+    <>
     <CartContextProvider>
       <BrowserRouter>
         <Nav/>
@@ -22,6 +21,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       </CartContextProvider>
+    </>
   );
 }
 

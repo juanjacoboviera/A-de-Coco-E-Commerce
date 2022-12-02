@@ -1,10 +1,20 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart }  from "@fortawesome/free-solid-svg-icons";
 import {useParams, Link} from 'react-router-dom'
+import cartContext from '../storage/CartContext';
 
-const ProductCard = ({product}) => {
+
+const ProductCard = ({product, openCart, setOpenCart }) => {
   const {categoryId} = useParams()
+  const context = useContext(cartContext)
+  const {addToCart, cart} = context.value
+  
+  const itemForCart = {
+      ...product,
+      quantity: 1
+  }
+
   return (
     <div className='product__card'>
         <div className="product__wishlist">
@@ -18,7 +28,11 @@ const ProductCard = ({product}) => {
                 <h2>{product.title}</h2>
                 <span>/{product.size}</span>
                 <p>${product.price}</p>
-                <button className='buy__btn'>AGREGAR</button>
+                <button onClick={()=>{
+                  addToCart(itemForCart)
+                  setOpenCart(!openCart)
+                }} 
+                  className='buy__btn'>AGREGAR</button>
             </div>
 
         </div>
