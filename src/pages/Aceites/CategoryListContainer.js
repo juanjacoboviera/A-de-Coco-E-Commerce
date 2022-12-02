@@ -8,6 +8,7 @@ import {useParams} from 'react-router-dom'
 import {getCategories} from '../../functions/functions'
 import { getProductsByCategory, getSingleProduct, getAllProducts} from '../../services/firebase'
 import cartContext from '../../storage/CartContext'
+import { Ring } from '@uiball/loaders'
 
 const CategoryListContainer = () =>{
 
@@ -27,9 +28,11 @@ const CategoryListContainer = () =>{
   const decreaseToCount = () =>{
     setCounter((prevValue) => prevValue - 1)
   }
-
+  
 
   useEffect(() =>{
+    console.log(singleProduct)
+    console.log(!!Object.keys(singleProduct).length < 10)
     // Migrar esto a la BDs Firebase
     const category = getCategories(categoryId)
     const selectedCategory = {...category}
@@ -75,7 +78,13 @@ const CategoryListContainer = () =>{
           <div className="filters__container">
           </div>
           <div className="card__container">
-            {products.map(product => <ProductCard key={product.id} product={product} setOpenCart={setOpenCart} openCart={openCart}/>)}
+            {products.length >=1 ? products.map(product => <ProductCard key={product.id} product={product} setOpenCart={setOpenCart} openCart={openCart}/>): 
+            <Ring 
+            size={50}
+            lineWeight={5}
+            speed={2} 
+            color="green" 
+            />}
           </div>
 
           </div>
@@ -85,3 +94,6 @@ const CategoryListContainer = () =>{
 }
 
 export default CategoryListContainer
+
+
+
