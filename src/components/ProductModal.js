@@ -23,7 +23,7 @@ const ProductModal = ({open, close, singleProduct, addToCount, decreaseToCount, 
             e.stopPropagation()
             e.preventDefault()
         }} className="modal__container">
-            {singleProduct.length ? <Ring 
+            {Object.keys(singleProduct).length === 0 ? <Ring 
             size={50}
             lineWeight={5}
             speed={2} 
