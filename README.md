@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+Frontend Project Documentation for Coconut-Based E-Commerce Site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Overview:
+This document provides an overview of the frontend design and development for an e-commerce site that specializes in selling coconut-based products.
 
-## Available Scripts
+Design:
+The design of the website is clean and modern, with a focus on showcasing the products and making it easy for users to navigate and find what they're looking for. The color scheme is primarily white, green and brown, with images of coconuts used throughout the site to create a cohesive and on-brand look. The layout is not fully responsive yet, however it will be in the near future.
 
-In the project directory, you can run:
+Features:
+The website features a home page, product catalog, shopping cart, and checkout system, as well. There is also a search function, filtering options and a contact form that will be made available in upcoming commits.
+Technologies:
+The website is built using HTML, CSS and JavaScript, and is powered by the modern JavaScript framework React. There was no use of frameworks such as Tailwind or Bootstrap or CSS preprocessor such as Sass or Less. The website communicates with a backend with FireBase API to handle the processing of orders and handling of customer data.
 
-### `npm start`
+Development:
+The development process follows agile methodology and was divided into several sprints.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Deployment:
+The website will be deployed on a cloud hosting platform such as AWS, Google Cloud or Heroku, and will be optimized for high performance and scalability. The website will be tested on multiple browsers and devices to ensure that it works properly and is accessible to all users.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Maintenance and Support:
+The website will be maintained and supported by the development team to ensure that it remains functional and up-to-date. Any bugs or issues will be addressed in a timely manner, and new features may be added based on customer feedback and business needs.
