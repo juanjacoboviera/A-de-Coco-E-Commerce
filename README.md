@@ -7,9 +7,9 @@ Design:
 The design of the website is clean and modern, with a focus on showcasing the products and making it easy for users to navigate and find what they're looking for. The color scheme is primarily white, green and brown, with images of coconuts used throughout the site to create a cohesive and on-brand look. The layout is not fully responsive yet, however it will be in the near future.
 
 Features:
-The website features a home page, product catalog, shopping cart, and checkout system, as well. There is also a search function, filtering options and a contact form that will be made available in upcoming commits.
+The website features a home page, product catalog, shopping cart, and checkout system. There is also a search function, filtering options and a contact form that will be made available in upcoming updates.
 Technologies:
-The website is built using HTML, CSS and JavaScript, and is powered by the modern JavaScript framework React. There was no use of frameworks such as Tailwind or Bootstrap or CSS preprocessor such as Sass or Less. The website communicates with a backend with FireBase API to handle the processing of orders and handling of customer data.
+The website is built using HTML, CSS and JavaScript, and is powered by the modern JavaScript framework React. There was no use of frameworks such as Tailwind or Bootstrap or CSS preprocessor such as Sass or Less. The website communicates with a backend via FireBase, which handles the processing of orders and handling of customer data.
 
 Development:
 The development process follows agile methodology and was divided into several sprints.
